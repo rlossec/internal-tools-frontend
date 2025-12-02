@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { baseRoutes } from "./routes/base";
 import { toolRoutes } from "./routes/tool";
 import { NotFoundPage } from "./pages/base/NotFoundPage";
+import { analyticsRoutes } from "./routes/analytics";
 
 function App() {
   return (
@@ -19,6 +20,9 @@ function App() {
             <Route key={route.path} path={route.path} element={route.element} />
           ))}
           <Route path="*" element={<NotFoundPage />} />
+          {analyticsRoutes.map((route) => (
+            <Route key={route.path} path={route.path} element={route.element} />
+          ))}
         </Route>
       </Routes>
     </BrowserRouter>
