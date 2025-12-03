@@ -17,9 +17,9 @@ const variants = {
 };
 
 const sizes = {
-  sm: "h-6 text-xs px-2",
-  md: "h-8 text-sm px-3",
-  lg: "h-10 text-base px-4",
+  sm: "text-xs px-2 py-1",
+  md: "text-sm px-3 py-1.5",
+  lg: "text-base px-4 py-2",
 };
 
 export interface ChipProps
@@ -51,8 +51,12 @@ export const Chip = React.forwardRef<HTMLDivElement, ChipProps>(
     ref
   ) => {
     const baseClasses =
-      "inline-flex items-center justify-center rounded-full transition-colors";
-    const variantClasses = variants[variant];
+      "inline-flex items-center justify-center rounded-full transition-colors whitespace-nowrap";
+    // Si className contient des classes de couleur (bg-, text-, etc.), on les utilise
+    // Sinon, on utilise les variants par défaut
+    const hasCustomColors =
+      className.includes("bg-") || className.includes("text-");
+    const variantClasses = hasCustomColors ? "" : variants[variant];
     const sizeClasses = sizes[size];
     const clickableClasses = clickable ? "cursor-pointer" : "";
     const removableClasses = removable ? "pr-2" : "";

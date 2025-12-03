@@ -1,13 +1,5 @@
 import { DataTable } from "../common/data/DataTable";
-
-interface Tool {
-  id: string;
-  name: string;
-  department: string;
-  users_count: number;
-  monthly_cost: number;
-  status: string;
-}
+import type { Tool } from "../../types/entities";
 
 interface ToolsTableProps {
   tools: Tool[];
@@ -17,10 +9,14 @@ export const ToolsTable = ({ tools }: ToolsTableProps) => {
   const columns = [
     { header: "Id", key: "id" as const, sortable: true },
     { header: "Name", key: "name" as const, sortable: true },
-    { header: "Department", key: "department" as const, sortable: true },
+    {
+      header: "Department",
+      key: "owner_department" as const,
+      sortable: true,
+    },
     {
       header: "Users",
-      key: "users_count" as const,
+      key: "active_users_count" as const,
       sortable: true,
     },
     {
@@ -29,7 +25,7 @@ export const ToolsTable = ({ tools }: ToolsTableProps) => {
       sortable: true,
       render: (item: Tool) => `€${item.monthly_cost.toLocaleString()}`,
     },
-    { header: "Statut", key: "status" as const, sortable: true },
+    { header: "Status", key: "status" as const, sortable: true },
   ];
 
   return (

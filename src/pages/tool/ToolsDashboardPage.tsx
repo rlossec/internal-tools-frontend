@@ -1,18 +1,37 @@
+import { useTools } from "../../hooks/queries/tools/useTools";
+import { useDepartments } from "../../hooks/queries";
+import { useAnalytics } from "../../hooks/queries/analytics/useAnalytics";
+
 import { KPICard } from "../../components/KPICard";
 import { ToolsTable } from "../../components/tool/ToolsTable";
 import { Paper } from "../../components/common/base/Paper";
+import { Loader } from "../../components/common/loader/Loader";
+
+import { ArrowTrending } from "../../icons/state/ArrowTrending";
+import { WrenchIcon } from "../../icons/user-interface/WrenchIcon";
+import { BuildingIcon } from "../../icons/others/BuildingIcon";
+import { UsersIcon } from "../../icons/user-interface/UsersIcon";
 
 export const ToolsDashboardPage = () => {
-  const tools = [
-    {
-      id: "1",
-      name: "Tool 1",
-      department: "Department 1",
-      users_count: 10,
-      monthly_cost: 100,
-      status: "Active",
-    },
-  ];
+  const {
+    data: tools,
+    isLoading: isLoadingTools,
+    error: errorTools,
+  } = useTools({ sortBy: "updated_at", sortOrder: "desc", limit: 8 });
+  const {
+    data: analytics,
+    isLoading: isLoadingAnalytics,
+    error: errorAnalytics,
+  } = useAnalytics();
+
+  const {
+    data: departments,
+    isLoading: isLoadingDepartments,
+    error: errorDepartments,
+  } = useDepartments();
+
+  const isLoadingdForKPIs = isLoadingAnalytics || isLoadingDepartments;
+  const hasErrorForKPIs = errorAnalytics || errorDepartments;
 
   return (
     <div className="flex flex-col gap-6 py-6">
@@ -28,19 +47,51 @@ export const ToolsDashboardPage = () => {
 
       {/* KPI Cards Section */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        <KPICard
-          title="Monthly Budget"
-          icon="💰"
-          value={"€28,750"}
-          overValue={"30k"}
-        />
-        <KPICard title="Active Tools" icon="🔧" value={"147"} />
-        <KPICard title="Departments" icon="🏢" value={"8"} />
-        <KPICard title="Cost/User" icon="💰" value={"€156"} />
+        {isLoadingdForKPIs ? (
+          <Loader />
+        ) : hasErrorForKPIs ? (
+          <div className="text-error">
+            {hasErrorForKPIs instanceof Error
+              ? hasErrorForKPIs.message
+              : "An error occurred"}
+          </div>
+        ) : analytics ? (
+          <>
+            <KPICard
+              title="Monthly Budget"
+              icon={<ArrowTrending className="w-6 h-6" />}
+              value={`€${analytics.budget_overview.current_month_total.toLocaleString()}`}
+              overValue={`€${analytics.budget_overview.monthly_limit.toLocaleString()}`}
+              trend={analytics.kpi_trends.budget_change}
+              color="bg-gradient-to-br from-emerald-300 to-teal-600"
+            />
+            <KPICard
+              title="Active Tools"
+              icon={<WrenchIcon className="w-6 h-6" />}
+              value={String(tools?.length || 0)}
+              trend={analytics.kpi_trends.tools_change}
+              color="bg-gradient-to-br from-blue-400 to-purple-500"
+            />
+            <KPICard
+              title="Departments"
+              icon={<BuildingIcon className="w-6 h-6" />}
+              value={String(departments?.length || 0)}
+              trend={`${analytics.kpi_trends.departments_change}`}
+              color="bg-gradient-to-br from-orange-400 to-red-500"
+            />
+            <KPICard
+              title="Cost/User"
+              icon={<UsersIcon className="w-6 h-6" />}
+              value={`€${analytics.cost_analytics.cost_per_user.toLocaleString()}`}
+              trend={analytics.kpi_trends.cost_per_user_change}
+              color="bg-gradient-to-br from-pink-400 to-rose-500"
+            />
+          </>
+        ) : null}
       </div>
 
       {/* Recent Tools Table Section */}
-      <div className="flex flex-col gap-4">
+      <Paper className="flex flex-col gap-4">
         <div className="flex flex-col gap-1">
           <h2 className="text-xl font-semibold text-text-light">
             Recent Tools
@@ -50,7 +101,15 @@ export const ToolsDashboardPage = () => {
           </p>
         </div>
 
-        {tools.length > 0 ? (
+        {isLoadingTools ? (
+          <Loader />
+        ) : errorTools ? (
+          <div className="text-error">
+            {errorTools instanceof Error
+              ? errorTools.message
+              : "An error occurred"}
+          </div>
+        ) : tools && tools.length > 0 ? (
           <Paper className="p-0 overflow-hidden">
             <ToolsTable tools={tools} />
           </Paper>
@@ -61,7 +120,7 @@ export const ToolsDashboardPage = () => {
             </p>
           </Paper>
         )}
-      </div>
+      </Paper>
     </div>
   );
 };
