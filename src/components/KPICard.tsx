@@ -22,14 +22,14 @@ export const KPICard = ({
 }: KPICardProps) => {
   return (
     <Paper className="h-full">
-      <div className="flex flex-col gap-4 p-6">
+      <div className="flex flex-col gap-4 p-4">
         {/* Header avec titre et icône */}
         <div className="flex items-center justify-between">
           <h2 className="text-base font-semibold text-text-light">{title}</h2>
           <div
             className={`${
               color || "bg-background-alt"
-            } w-12 h-12 rounded-lg flex items-center justify-center text-white [&>svg]:text-white [&>svg]:stroke-white`}
+            } w-8 h-8 rounded-lg flex items-center justify-center text-white [&>svg]:text-white [&>svg]:stroke-white`}
           >
             {icon}
           </div>
@@ -40,7 +40,7 @@ export const KPICard = ({
           <div className="text-3xl font-bold text-text-light">
             {value}
             {overValue && (
-              <span className="text-lg font-normal text-text-light/60">
+              <span className="text-3xl font-normal text-text-light/60">
                 {" "}
                 / {overValue}
               </span>

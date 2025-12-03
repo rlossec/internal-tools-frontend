@@ -1,15 +1,16 @@
 import React from "react";
+import { CloseIcon } from "../../../icons/actions/CloseIcon";
 
 export type BadgeVariant =
   | "default"
   | "primary"
   | "success"
   | "warning"
-  | "error"
+  | "error";
 export type BadgeSize = "sm" | "md" | "lg";
 
 const variants = {
-  default: "bg-background-alt text-text",
+  default: "bg-background-alt text-text border border-border",
   primary: "bg-primary text-background",
   success: "bg-success text-background",
   warning: "bg-warning text-background",
@@ -17,9 +18,9 @@ const variants = {
 };
 
 const sizes = {
-  sm: "px-2 py-0.5 text-xs",
-  md: "px-2.5 py-0.5 text-sm",
-  lg: "px-3 py-1 text-base",
+  sm: "px-2 py-0.5 text-xs gap-1",
+  md: "px-2.5 py-0.5 text-sm gap-1.5",
+  lg: "px-3 py-1 text-base gap-2",
 };
 
 export interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
@@ -27,6 +28,7 @@ export interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
   size?: BadgeSize;
   removable?: boolean;
   onRemove?: () => void;
+  className?: string;
 }
 
 export const Badge: React.FC<BadgeProps> = ({
@@ -39,7 +41,7 @@ export const Badge: React.FC<BadgeProps> = ({
   ...props
 }) => {
   const baseClasses =
-    "inline-flex items-center justify-center rounded-full font-medium transition-colors";
+    "inline-flex items-center justify-center rounded-full font-medium transition-all duration-200";
   const variantClasses = variants[variant];
   const sizeClasses = sizes[size];
   const removableClasses = removable ? "pr-1" : "";
@@ -49,7 +51,7 @@ export const Badge: React.FC<BadgeProps> = ({
       className={`${baseClasses} ${variantClasses} ${sizeClasses} ${removableClasses} ${className}`}
       {...props}
     >
-      {children}
+      <span>{children}</span>
       {removable && onRemove && (
         <button
           type="button"
@@ -57,21 +59,10 @@ export const Badge: React.FC<BadgeProps> = ({
             e.stopPropagation();
             onRemove();
           }}
-          className="ml-1 rounded-full hover:bg-black/10 p-0.5"
+          className="ml-1 rounded-full hover:bg-black/10 dark:hover:bg-white/10 p-0.5 transition-colors focus:outline-none focus:ring-1 focus:ring-current"
+          aria-label="Retirer le badge"
         >
-          <svg
-            className="h-3 w-3"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M6 18L18 6M6 6l12 12"
-            />
-          </svg>
+          <CloseIcon size={12} />
         </button>
       )}
     </span>

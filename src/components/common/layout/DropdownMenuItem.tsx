@@ -1,3 +1,5 @@
+import React from "react";
+
 interface DropdownMenuItemProps {
   children: React.ReactNode;
   onClick?: () => void;
@@ -12,7 +14,7 @@ export const DropdownMenuItem = ({
   return (
     <div
       onClick={disabled ? undefined : onClick}
-      className={`px-4 py-2 text-text transition ${
+      className={`px-4 py-2 flex items-center gap-3 text-sm text-text transition ${
         disabled
           ? "opacity-50 cursor-not-allowed"
           : "cursor-pointer hover:bg-background-alt"

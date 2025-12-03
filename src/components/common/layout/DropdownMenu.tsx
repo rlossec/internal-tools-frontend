@@ -4,7 +4,7 @@ export const DropdownMenu = ({
   trigger,
   children,
 }: {
-  trigger: React.ReactNode;
+  trigger: React.ReactNode | ((isOpen: boolean) => React.ReactNode);
   children: React.ReactNode;
 }) => {
   const [open, setOpen] = useState(false);
@@ -21,9 +21,12 @@ export const DropdownMenu = ({
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  const triggerElement =
+    typeof trigger === "function" ? trigger(open) : trigger;
+
   return (
     <div className="relative inline-block" ref={ref}>
-      <div onClick={() => setOpen((o) => !o)}>{trigger}</div>
+      <div onClick={() => setOpen((o) => !o)}>{triggerElement}</div>
       {open && (
         <div className="absolute right-0 mt-2 w-48 rounded-lg bg-background border border-border shadow-lg z-50">
           {children}

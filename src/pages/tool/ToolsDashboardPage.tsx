@@ -59,7 +59,7 @@ export const ToolsDashboardPage = () => {
           <>
             <KPICard
               title="Monthly Budget"
-              icon={<ArrowTrending className="w-6 h-6" />}
+              icon={<ArrowTrending className="w-5 h-5" />}
               value={`€${analytics.budget_overview.current_month_total.toLocaleString()}`}
               overValue={`€${analytics.budget_overview.monthly_limit.toLocaleString()}`}
               trend={analytics.kpi_trends.budget_change}
@@ -67,21 +67,21 @@ export const ToolsDashboardPage = () => {
             />
             <KPICard
               title="Active Tools"
-              icon={<WrenchIcon className="w-6 h-6" />}
+              icon={<WrenchIcon className="w-5 h-5" />}
               value={String(tools?.length || 0)}
               trend={analytics.kpi_trends.tools_change}
-              color="bg-gradient-to-br from-blue-400 to-purple-500"
+              color="bg-gradient-to-br from-blue-600 to-purple-600"
             />
             <KPICard
               title="Departments"
-              icon={<BuildingIcon className="w-6 h-6" />}
+              icon={<BuildingIcon className="w-5 h-5" />}
               value={String(departments?.length || 0)}
               trend={`${analytics.kpi_trends.departments_change}`}
               color="bg-gradient-to-br from-orange-400 to-red-500"
             />
             <KPICard
               title="Cost/User"
-              icon={<UsersIcon className="w-6 h-6" />}
+              icon={<UsersIcon className="w-5 h-5" />}
               value={`€${analytics.cost_analytics.cost_per_user.toLocaleString()}`}
               trend={analytics.kpi_trends.cost_per_user_change}
               color="bg-gradient-to-br from-pink-400 to-rose-500"
@@ -96,9 +96,6 @@ export const ToolsDashboardPage = () => {
           <h2 className="text-xl font-semibold text-text-light">
             Recent Tools
           </h2>
-          <p className="text-sm text-text-light/60">
-            Overview of your organization's latest tools and their usage.
-          </p>
         </div>
 
         {isLoadingTools ? (
