@@ -45,10 +45,6 @@ export const ToolsTable = ({ tools }: ToolsTableProps) => {
       key: "status" as const,
       sortable: true,
       render: (item: Tool) => {
-        if (!item.status) {
-          return "-";
-        }
-
         return <StatusBadge status={item.status} />;
       },
     },

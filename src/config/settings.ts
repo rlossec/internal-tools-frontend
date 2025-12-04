@@ -8,6 +8,7 @@ export const DEPARTMENTS = [
   "HR",
   "Finance",
   "Operations",
+  "Communication",
 ] as const;
 
 export const TOOL_CATEGORIES = [
@@ -21,6 +22,8 @@ export const TOOL_CATEGORIES = [
   "HR",
   "Finance",
   "Infrastructure",
+  "Project Management",
+  "Sales & Marketing",
 ] as const;
 
 // Statuts d'outils - Source de vérité pour les statuts d'outils

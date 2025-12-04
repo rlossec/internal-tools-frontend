@@ -84,7 +84,7 @@ export const ToolCard = ({ tool }: { tool: Tool }) => {
         <div className="flex items-center justify-between gap-2">
           <StatusBadge status={tool.status} />
           <Badge size="sm" variant="default">
-            {tool.monthly_cost.toLocaleString()}€/mois
+            {tool.monthly_cost ? tool.monthly_cost.toLocaleString() : 0}€/mois
           </Badge>
         </div>
 

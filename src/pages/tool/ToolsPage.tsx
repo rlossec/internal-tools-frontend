@@ -35,10 +35,11 @@ export const ToolsPage = () => {
 
   // Filtrage des outils
   const filteredTools = useMemo(() => {
+    console.log("tools", tools?.length);
     if (!tools) return [];
     return filterTools(tools, filters);
   }, [tools, filters]);
-
+  console.log("filteredTools", filteredTools?.length);
   if (isLoading) {
     return (
       <div className="flex justify-center items-center min-h-screen">
@@ -67,21 +68,21 @@ export const ToolsPage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <MultiSelectFilterDropdown
-              label="Départements"
+              label="Departments"
               options={DEPARTMENTS}
               selectedOptions={filters.departments}
               onChange={setDepartments}
             />
 
             <StatusFilter
-              label="Statuts"
+              label="Status"
               options={TOOL_STATUSES}
               selectedOptions={filters.status}
               onChange={setStatus}
             />
 
             <MultiSelectFilterDropdown
-              label="Catégories"
+              label="Categories"
               options={TOOL_CATEGORIES}
               selectedOptions={filters.categories}
               onChange={setCategories}
@@ -89,7 +90,7 @@ export const ToolsPage = () => {
 
             <div className="flex flex-col gap-2">
               <RangeSlider
-                label="Coût mensuel (€)"
+                label="Monthly cost (€)"
                 min={0}
                 max={MAX_TOOL_COST}
                 value={filters.costRange}
