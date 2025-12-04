@@ -1,18 +1,12 @@
 import { DataTable } from "../common/data/DataTable";
-import { StatusBadge, type StatusVariant } from "./StatusBadge";
+import { StatusBadge } from "./StatusBadge";
 
-import type { Tool, ToolStatus } from "../../types/entities";
+import type { Tool } from "../../types/entities";
 import { DisplayToolIcon } from "./DisplayToolIcon";
 
 interface ToolsTableProps {
   tools: Tool[];
 }
-
-const statusVariantMap: Record<ToolStatus, StatusVariant> = {
-  active: "success",
-  expiring: "warning",
-  unused: "error",
-};
 
 export const ToolsTable = ({ tools }: ToolsTableProps) => {
   const columns = [
@@ -54,8 +48,8 @@ export const ToolsTable = ({ tools }: ToolsTableProps) => {
         if (!item.status) {
           return "-";
         }
-        const variant = statusVariantMap[item.status] || "default";
-        return <StatusBadge status={item.status} variant={variant} />;
+
+        return <StatusBadge status={item.status} />;
       },
     },
   ];

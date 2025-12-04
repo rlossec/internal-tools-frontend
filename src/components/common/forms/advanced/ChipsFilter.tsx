@@ -26,8 +26,10 @@ export const ChipsFilter = <T extends string | number>({
   };
 
   return (
-    <div className="flex flex-row gap-2 items-center">
-      <h3 className="text-sm font-semibold">{label}</h3>
+    <div className="flex flex-col gap-2">
+      {label && (
+        <h3 className="text-sm font-semibold text-text-light">{label}</h3>
+      )}
       <div className="flex flex-wrap gap-2">
         {options.map((option) => {
           const isSelected = selectedOptions.includes(option);
