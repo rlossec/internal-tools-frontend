@@ -1,5 +1,8 @@
 export { useTools } from "./tools/useTools";
 export { useGetTool } from "./tools/useGetTool";
+export { useCreateTool } from "./tools/useCreateTool";
+export { useEditTool } from "./tools/useEditTool";
+export { useDeleteTool } from "./tools/useDeleteTool";
 export { useUsers } from "./users/useUsers";
 export { useGetUser } from "./users/useGetUser";
 export { useDepartments } from "./departments/useDepartments";
