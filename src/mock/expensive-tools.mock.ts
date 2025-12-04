@@ -78,7 +78,7 @@ const mockExpensiveToolsData = [
   },
   {
     id: 25,
-    name: "Notion",
+    name: "PandaDoc",
     monthly_cost: 99.99,
     active_users_count: 25,
     cost_per_user: 4.0,
@@ -128,7 +128,7 @@ const mockExpensiveToolsData = [
   },
   {
     id: 11,
-    name: "Salesforce",
+    name: "Excel",
     monthly_cost: 279.99,
     active_users_count: 8,
     cost_per_user: 35.0,
@@ -178,7 +178,7 @@ const mockExpensiveToolsData = [
   },
   {
     id: 21,
-    name: "Datadog",
+    name: "Docker",
     monthly_cost: 259.99,
     active_users_count: 3,
     cost_per_user: 86.66,
