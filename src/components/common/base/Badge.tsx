@@ -1,5 +1,5 @@
 import React from "react";
-import { CloseIcon } from "../../../icons/actions/CloseIcon";
+import { XMarkIcon as CloseIcon } from "@heroicons/react/24/outline";
 
 export type BadgeVariant =
   | "default"
@@ -62,7 +62,7 @@ export const Badge: React.FC<BadgeProps> = ({
           className="ml-1 rounded-full hover:bg-black/10 dark:hover:bg-white/10 p-0.5 transition-colors focus:outline-none focus:ring-1 focus:ring-current"
           aria-label="Retirer le badge"
         >
-          <CloseIcon size={12} />
+          <CloseIcon className="w-3 h-3" />
         </button>
       )}
     </span>

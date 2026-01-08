@@ -1,4 +1,4 @@
-import { InfoIcon } from "../../icons/state/InfoIcon";
+import { InformationCircleIcon as InfoIcon } from "@heroicons/react/24/outline";
 import { CostOptimizationAlerts } from "./insights/CostOptimizationAlerts";
 import { UnusedToolsWarnings } from "./insights/UnusedToolsWarnings";
 import { ROICalculations } from "./insights/ROICalculations";

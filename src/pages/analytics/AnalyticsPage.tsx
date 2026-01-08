@@ -6,7 +6,7 @@ import { Loader } from "../../components/common/loader/Loader";
 import { useAnalytics } from "../../hooks/queries/analytics/useAnalytics";
 import { useExpensiveTools } from "../../hooks/queries/analytics/useExpensiveTools";
 import { useDepartmentCosts } from "../../hooks/queries/analytics/useDepartmentCosts";
-import { ChartIcon } from "../../icons/state/ChartIcon";
+import { ChartBarIcon as ChartIcon } from "@heroicons/react/24/outline";
 
 export const AnalyticsPage = () => {
   const {

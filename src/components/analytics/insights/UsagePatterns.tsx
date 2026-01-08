@@ -1,5 +1,5 @@
 import { Paper } from "../../common/base/Paper";
-import { ChartIcon } from "../../../icons/state/ChartIcon";
+import { ChartBarIcon as ChartIcon } from "@heroicons/react/24/outline";
 import { ChartPlaceholder } from "../../common/charts/ChartPlaceholder";
 
 export const UsagePatterns = () => {

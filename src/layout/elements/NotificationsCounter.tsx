@@ -1,5 +1,5 @@
 import { IconButton } from "../../components/common/base/buttons/IconButton";
-import { BellIcon } from "../../icons/state/BellIcon";
+import { BellIcon } from "@heroicons/react/24/outline";
 
 export const NotificationsCounter = () => {
   const handleClick = () => {
@@ -10,7 +10,7 @@ export const NotificationsCounter = () => {
   return (
     <div className="relative">
       <IconButton
-        icon={<BellIcon size={20} />}
+        icon={<BellIcon className="w-5 h-5" />}
         ariaLabel="Notifications"
         onClick={handleClick}
         variant="ghost"

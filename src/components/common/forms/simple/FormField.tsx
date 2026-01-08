@@ -1,5 +1,5 @@
 import { type ReactNode } from "react";
-import { DangerIcon } from "../../../../icons/state/DangerIcon";
+import { ExclamationTriangleIcon as DangerIcon } from "@heroicons/react/24/outline";
 
 interface FormFieldProps {
   label?: string;

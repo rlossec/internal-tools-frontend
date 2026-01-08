@@ -1,5 +1,5 @@
 import { IconButton } from "../../components/common/base/buttons/IconButton";
-import { SettingsIcon } from "../../icons/user-interface/SettingsIcon";
+import { Cog6ToothIcon as SettingsIcon } from "@heroicons/react/24/outline";
 
 export const ProfileSettingsButton = () => {
   const handleClick = () => {
@@ -9,7 +9,7 @@ export const ProfileSettingsButton = () => {
 
   return (
     <IconButton
-      icon={<SettingsIcon size={20} />}
+      icon={<SettingsIcon className="w-5 h-5" />}
       ariaLabel="Paramètres"
       onClick={handleClick}
       variant="ghost"

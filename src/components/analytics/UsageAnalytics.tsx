@@ -2,7 +2,7 @@ import { DepartmentActivity } from "./usages/DepartmentActivity";
 import { GrowthTrends } from "./usages/GrowthTrends";
 import { MostLeastUsedTools } from "./usages/MostLeastUsedTools";
 import { UserAdoptionRates } from "./usages/UserAdoptionRates";
-import { ChartIcon } from "../../icons/state/ChartIcon";
+import { ChartBarIcon as ChartIcon } from "@heroicons/react/24/outline";
 
 export const UsageAnalytics = () => {
   return (

@@ -1,5 +1,5 @@
 import React from "react";
-import { PersonIcon } from "../../../icons/user-interface/PersonIcon";
+import { UserIcon as PersonIcon } from "@heroicons/react/24/outline";
 
 export type AvatarSize = "xs" | "sm" | "md" | "lg" | "xl";
 

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import { XIcon } from "../../icons/navigation/XIcon";
+import { XMarkIcon as XIcon } from "@heroicons/react/24/outline";
 import { SearchBar } from "./SearchBar";
 import { ThemeToggle } from "./ThemeToggle";
 import { NotificationsCounter } from "./NotificationsCounter";
@@ -72,7 +72,7 @@ export const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
             className="p-2 rounded-lg hover:bg-background-alt transition-colors text-text-light"
             aria-label="Fermer le menu"
           >
-            <XIcon size={24} />
+            <XIcon className="w-6 h-6" />
           </button>
         </div>
 

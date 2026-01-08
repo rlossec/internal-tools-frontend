@@ -9,11 +9,11 @@ import { Badge } from "../common/base/Badge";
 import { IconButton } from "../common/base/buttons/IconButton";
 import { ModalConfirmation } from "../common/overlay/ModalConfirmation";
 
-import { ToolIcon } from "../../icons/others/ToolIcon";
-import { PencilIcon } from "../../icons/actions/PencilIcon";
-import { EyeIcon } from "../../icons/media-player/EyeIcon";
-import { ExternalLinkIcon } from "../../icons/navigation/ExternalLinkIcon";
-import { TrashIcon } from "../../icons/actions/TrashIcon";
+import { WrenchScrewdriverIcon as ToolIcon } from "@heroicons/react/24/outline";
+import { PencilIcon } from "@heroicons/react/24/outline";
+import { EyeIcon } from "@heroicons/react/24/outline";
+import { ArrowTopRightOnSquareIcon as ExternalLinkIcon } from "@heroicons/react/24/outline";
+import { TrashIcon } from "@heroicons/react/24/outline";
 import { StatusBadge } from "./StatusBadge";
 import { useDeleteTool } from "../../hooks/queries/tools/useDeleteTool";
 
@@ -63,7 +63,7 @@ export const ToolCard = ({ tool }: { tool: Tool }) => {
         {/* Quick actions */}
         <div className="flex gap-2 ml-4 shrink-0">
           <IconButton
-            icon={<EyeIcon size={16} />}
+            icon={<EyeIcon className="w-4 h-4" />}
             ariaLabel="View details"
             onClick={handleViewDetails}
             size="xs"
@@ -71,7 +71,7 @@ export const ToolCard = ({ tool }: { tool: Tool }) => {
             color="success"
           />
           <IconButton
-            icon={<PencilIcon size={16} />}
+            icon={<PencilIcon className="w-4 h-4" />}
             ariaLabel="Edit"
             onClick={handleEdit}
             size="xs"
@@ -81,7 +81,7 @@ export const ToolCard = ({ tool }: { tool: Tool }) => {
           {tool.website_url ? (
             <IconButton
               variant="ghost"
-              icon={<ExternalLinkIcon size={16} />}
+              icon={<ExternalLinkIcon className="w-4 h-4" />}
               ariaLabel="Open website"
               onClick={() => {
                 window.open(tool.website_url, "_blank");
@@ -91,7 +91,7 @@ export const ToolCard = ({ tool }: { tool: Tool }) => {
             />
           ) : null}
           <IconButton
-            icon={<TrashIcon size={16} />}
+            icon={<TrashIcon className="w-4 h-4" />}
             ariaLabel="Delete"
             onClick={handleDeleteClick}
             size="xs"
@@ -171,10 +171,10 @@ const ToolIconProtected: React.FC<ToolIconProtectedProps> = ({
     // Si pas d’URL ou erreur → fallback
     return (
       <div
-        className={`flex items-center justify-center rounded bg-gray-200 text-gray-600 ${className}`}
+        className={`flex items-center justify-center rounded bg-background-alt border-2 border-border text-text-light ${className}`}
         style={{ width: size, height: size }}
       >
-        {fallback ?? <ToolIcon size={size * 0.6} />}
+        {fallback ?? <ToolIcon className="w-4 h-4" />}
       </div>
     );
   }

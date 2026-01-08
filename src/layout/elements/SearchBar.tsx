@@ -1,4 +1,4 @@
-import { SearchIcon } from "../../icons/actions/SearchIcon";
+import { MagnifyingGlassIcon as SearchIcon } from "@heroicons/react/24/outline";
 
 interface SearchBarProps {
   className?: string;
@@ -8,7 +8,7 @@ export const SearchBar = ({ className = "" }: SearchBarProps) => {
   return (
     <div className={`relative flex items-center ${className}`}>
       <div className="absolute left-3 pointer-events-none">
-        <SearchIcon className="text-text-light/60" size={20} />
+        <SearchIcon className="text-text-light/60 w-5 h-5" />
       </div>
       <input
         type="text"

@@ -1,5 +1,5 @@
 import { Paper } from "../../common/base/Paper";
-import { WrenchIcon } from "../../../icons/user-interface/WrenchIcon";
+import { WrenchScrewdriverIcon as WrenchIcon } from "@heroicons/react/24/outline";
 
 export const UnusedToolsWarnings = () => {
   return (

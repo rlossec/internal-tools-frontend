@@ -1,7 +1,7 @@
 import { IconButton } from "../../components/common/base/buttons/IconButton";
 import { useTheme } from "../../hooks/useTheme";
-import { MoonIcon } from "../../icons/others/MoonIcon";
-import { SunIcon } from "../../icons/others/SunIcon";
+import { MoonIcon } from "@heroicons/react/24/outline";
+import { SunIcon } from "@heroicons/react/24/outline";
 
 export const ThemeToggle = () => {
   const { theme, toggleTheme } = useTheme();
@@ -10,9 +10,9 @@ export const ThemeToggle = () => {
     <IconButton
       icon={
         theme === "light" ? (
-          <MoonIcon size={20} />
+          <MoonIcon className="w-5 h-5" />
         ) : (
-          <SunIcon size={20} className="text-warning" />
+          <SunIcon className="w-5 h-5 text-warning" />
         )
       }
       onClick={toggleTheme}

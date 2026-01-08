@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { ToolCard } from "./ToolCard";
 import { CreateToolCard } from "./CreateToolCard";
 import { Button } from "../common/base/buttons/Button";
-import { PlusIcon } from "../../icons/actions/PlusIcon";
+import { PlusIcon } from "@heroicons/react/24/outline";
 import type { Tool } from "../../types/entities/tool";
 
 interface ToolCatalogProps {

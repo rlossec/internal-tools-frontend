@@ -7,10 +7,10 @@ import { ToolsTable } from "../../components/tool/ToolsTable";
 import { Paper } from "../../components/common/base/Paper";
 import { Loader } from "../../components/common/loader/Loader";
 
-import { ArrowTrending } from "../../icons/state/ArrowTrending";
-import { WrenchIcon } from "../../icons/user-interface/WrenchIcon";
-import { BuildingIcon } from "../../icons/others/BuildingIcon";
-import { UsersIcon } from "../../icons/user-interface/UsersIcon";
+import { ArrowTrendingUpIcon as ArrowTrending } from "@heroicons/react/24/outline";
+import { WrenchScrewdriverIcon as WrenchIcon } from "@heroicons/react/24/outline";
+import { BuildingOfficeIcon as BuildingIcon } from "@heroicons/react/24/outline";
+import { UsersIcon } from "@heroicons/react/24/outline";
 
 export const ToolsDashboardPage = () => {
   const {

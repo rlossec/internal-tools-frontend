@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
-import { CloseIcon } from "../../icons/actions/CloseIcon";
+import { XMarkIcon as CloseIcon } from "@heroicons/react/24/outline";
 import { Button } from "../base/buttons/Button";
 
 export interface DialogProps {
@@ -91,10 +91,7 @@ export const Dialog: React.FC<DialogProps> = ({
               <div className="flex items-center justify-between">
                 <h3 className="text-lg font-medium text-text">{title}</h3>
                 {showCloseButton && (
-                  <Button
-                    variant="ghost"
-                    onClick={onClose}
-                  >
+                  <Button variant="ghost" onClick={onClose}>
                     <span className="sr-only">Fermer</span>
                     <CloseIcon />
                   </Button>
@@ -105,10 +102,7 @@ export const Dialog: React.FC<DialogProps> = ({
 
           {!title && showCloseButton && (
             <div className="absolute right-4 top-4">
-              <Button
-                variant="ghost"
-                onClick={onClose}
-              >
+              <Button variant="ghost" onClick={onClose}>
                 <span className="sr-only">Fermer</span>
                 <CloseIcon />
               </Button>

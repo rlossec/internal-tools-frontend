@@ -1,4 +1,4 @@
-import { ChartIcon } from "../../../icons/state/ChartIcon";
+import { ChartBarIcon as ChartIcon } from "@heroicons/react/24/outline";
 
 interface ChartPlaceholderProps {
   title: string;

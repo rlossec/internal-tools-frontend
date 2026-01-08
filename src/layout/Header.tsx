@@ -6,8 +6,8 @@ import { ThemeToggle } from "./elements/ThemeToggle";
 import { UserDropdown } from "./elements/UserDropdown";
 import { MobileMenu } from "./elements/MobileMenu";
 import { NavBar } from "./NavBar";
-import { BoltIcon } from "../icons/others/BoltIcon";
-import { MenuIcon } from "../icons/navigation/MenuIcon";
+import { BoltIcon } from "@heroicons/react/24/outline";
+import { Bars3Icon as MenuIcon } from "@heroicons/react/24/outline";
 import { IconButton } from "../components/common/base/buttons/IconButton";
 
 export const Header = () => {
@@ -20,7 +20,7 @@ export const Header = () => {
         <div className="flex items-center gap-4 w-full md:w-auto justify-between md:justify-start">
           <div className="px-2 flex items-center gap-2">
             <div className="bg-linear-to-br from-blue-600 to-purple-600 w-8 h-8 rounded-lg flex items-center justify-center">
-              <BoltIcon className="text-white" size={24} />
+              <BoltIcon className="text-white w-6 h-6" />
             </div>
             <h1 className="text-2xl font-bold text-text-light">Techcorp</h1>
           </div>
@@ -28,7 +28,7 @@ export const Header = () => {
           <NavBar className="hidden md:flex" />
           {/* Mobile Menu Button */}
           <IconButton
-            icon={<MenuIcon size={24} />}
+            icon={<MenuIcon className="w-6 h-6" />}
             onClick={() => setIsMobileMenuOpen(true)}
             ariaLabel="Ouvrir le menu"
             variant="ghost"

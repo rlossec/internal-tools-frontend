@@ -1,5 +1,5 @@
 import { Button } from "../common/base/buttons/Button";
-import { ArrowPathIcon } from "../../icons/navigation/ArrowPathIcon";
+import { ArrowPathIcon } from "@heroicons/react/24/outline";
 
 interface FiltersHeaderProps {
   activeFiltersCount: number;

@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { PlusIcon } from "../../icons/actions/PlusIcon";
+import { PlusIcon } from "@heroicons/react/24/outline";
 
 export const CreateToolCard = () => {
   const navigate = useNavigate();

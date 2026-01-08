@@ -1,9 +1,9 @@
 import { type ReactNode, useState } from "react";
-import { ChevronDownIcon } from "../../../icons/navigation/ChevronDownIcon";
-import { ChevronLeftIcon } from "../../../icons/navigation/ChevronLeftIcon";
-import { ChevronRightIcon } from "../../../icons/navigation/ChevronRightIcon";
-import { ChevronUpIcon } from "../../../icons/navigation/ChevronUpIcon";
-import { MoreVerticalIcon } from "../../../icons/actions/MoreVerticalIcon";
+import { ChevronDownIcon } from "@heroicons/react/24/outline";
+import { ChevronLeftIcon } from "@heroicons/react/24/outline";
+import { ChevronRightIcon } from "@heroicons/react/24/outline";
+import { ChevronUpIcon } from "@heroicons/react/24/outline";
+import { EllipsisVerticalIcon as MoreVerticalIcon } from "@heroicons/react/24/outline";
 
 import { DropdownMenu } from "../layout/DropdownMenu";
 import { DropdownMenuItem } from "../layout/DropdownMenuItem";

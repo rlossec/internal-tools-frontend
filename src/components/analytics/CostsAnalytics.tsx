@@ -5,10 +5,10 @@ import type { DepartmentCost } from "../../types/api/department_costs";
 import { DepartmentCostBreakdown } from "./costs/DepartmentCostBreakdown ";
 import { MonthlySpendEvolution } from "./costs/MonthlySpendEvolution";
 import { TopExpensiveTools } from "./costs/TopExpensiveTools";
-import { EuroIcon } from "../../icons/others/EuroIcon";
+import { CurrencyEuroIcon as EuroIcon } from "@heroicons/react/24/outline";
 import { Paper } from "../common/base/Paper";
 import { KPICard } from "../KPICard";
-import { ArrowTrending } from "../../icons/state/ArrowTrending";
+import { ArrowTrendingUpIcon as ArrowTrending } from "@heroicons/react/24/outline";
 
 export const CostsAnalytics = ({
   analytics,

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
-import { CloseIcon } from "../../icons/actions/CloseIcon";
-import { CheckCircleIcon } from "../../icons/state/CheckCircleIcon";
-import { DangerIcon } from "../../icons/state/DangerIcon";
-import { InfoIcon } from "../../icons/state/InfoIcon";
+import { XMarkIcon as CloseIcon } from "@heroicons/react/24/outline";
+import { CheckCircleIcon } from "@heroicons/react/24/outline";
+import { ExclamationTriangleIcon as DangerIcon } from "@heroicons/react/24/outline";
+import { InformationCircleIcon as InfoIcon } from "@heroicons/react/24/outline";
 
 export type ToastType =
   | "primary"
@@ -125,7 +125,7 @@ export const Toast: React.FC<ToastProps> = ({
     >
       <div className="p-4">
         <div className="flex items-start">
-          <div className={`flex-shrink-0 text-${color}`}>{icon}</div>
+          <div className={`shrink-0 text-${color}`}>{icon}</div>
           <div className="ml-3 w-0 flex-1">
             {title && <p className="text-sm font-medium text-text">{title}</p>}
             <p className="mt-1 text-sm text-text-light">{message}</p>
@@ -145,7 +145,7 @@ export const Toast: React.FC<ToastProps> = ({
               </div>
             )}
           </div>
-          <div className="ml-4 flex flex-shrink-0">
+          <div className="ml-4 flex shrink-0">
             <button
               type="button"
               className="inline-flex rounded-md text-text-light hover:text-text transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"

@@ -1,6 +1,6 @@
 
 import { Paper } from "../../common/base/Paper";
-import { BellIcon } from "../../../icons/state/BellIcon";
+import { BellIcon } from "@heroicons/react/24/outline";
 
 export const CostOptimizationAlerts = () => {
   return (

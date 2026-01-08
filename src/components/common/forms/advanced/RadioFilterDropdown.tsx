@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { ChevronDownIcon } from "../../../../icons/navigation/ChevronDownIcon";
+import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import { RadioGroup } from "../simple/RadioGroup";
 
 interface RadioFilterDropdownProps<T extends string> {

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { WrenchIcon } from "../../icons/others/WrenchIcon";
+import { WrenchScrewdriverIcon as WrenchIcon } from "@heroicons/react/24/outline";
 
 export const DisplayToolIcon = ({
   iconUrl,

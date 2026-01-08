@@ -1,5 +1,5 @@
 import { Paper } from "../../common/base/Paper";
-import { DollarIcon } from "../../../icons/state/DollarIcon";
+import { CurrencyDollarIcon as DollarIcon } from "@heroicons/react/24/outline";
 
 export const ROICalculations = () => {
   return (

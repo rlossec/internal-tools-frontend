@@ -16,10 +16,10 @@ import { DisplayToolIcon } from "../../components/tool/DisplayToolIcon";
 
 import { formatDate } from "../../utils/date-utils";
 
-import { PencilIcon } from "../../icons/actions/PencilIcon";
-import { TrashIcon } from "../../icons/actions/TrashIcon";
-import { ExternalLinkIcon } from "../../icons/navigation/ExternalLinkIcon";
-import { ChevronLeftIcon } from "../../icons/navigation/ChevronLeftIcon";
+import { PencilIcon } from "@heroicons/react/24/outline";
+import { TrashIcon } from "@heroicons/react/24/outline";
+import { ArrowTopRightOnSquareIcon as ExternalLinkIcon } from "@heroicons/react/24/outline";
+import { ChevronLeftIcon } from "@heroicons/react/24/outline";
 
 export const ToolDetailsPage = () => {
   const { id } = useParams<{ id: string }>();
@@ -122,7 +122,7 @@ export const ToolDetailsPage = () => {
               {tool.website_url && (
                 <IconButton
                   variant="outline"
-                  icon={<ExternalLinkIcon />}
+                  icon={<ExternalLinkIcon className="w-5 h-5" />}
                   ariaLabel="Open website"
                   onClick={() => window.open(tool.website_url, "_blank")}
                   size="md"
@@ -130,14 +130,14 @@ export const ToolDetailsPage = () => {
               )}
               <IconButton
                 variant="outline"
-                icon={<PencilIcon />}
+                icon={<PencilIcon className="w-5 h-5" />}
                 ariaLabel="Edit"
                 onClick={handleEdit}
                 size="md"
               />
               <IconButton
                 variant="outline"
-                icon={<TrashIcon />}
+                icon={<TrashIcon className="w-5 h-5" />}
                 ariaLabel="Delete"
                 onClick={handleDeleteClick}
                 size="md"
